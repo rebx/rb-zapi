@@ -1,13 +1,6 @@
 
 require 'shoulda'
-#require_relative '../lib/rb-zapi/zapimeth'
-$:.unshift File.dirname(__FILE__) + '/../lib/rb-zapi'
-begin
-  require 'zapimeth'
-rescue LoadError => e
-  puts $:
-  raise e
-end
+require_relative '../lib/rb-zapi/zapimeth'
 
 class TestSetParams < Test::Unit::TestCase
 
