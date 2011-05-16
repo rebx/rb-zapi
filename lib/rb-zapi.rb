@@ -1,4 +1,6 @@
 
+# encoding: utf-8
+
 require 'rb-zapi/zapidef'
 
 class RbZapi
