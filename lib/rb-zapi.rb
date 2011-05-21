@@ -1,7 +1,7 @@
 
 # encoding: utf-8
 
-require 'rb-zapi/zapidef'
+require_relative 'rb-zapi/zapi_methods'
 
 class RbZapi
 
