@@ -68,9 +68,21 @@ class TestSetParams < Test::Unit::TestCase
     
     # port definition test
     
+    should "have port defined when it is given" do
+      port = 80
+      @obj.set_port(port)
+      assert @obj.instance_variable_defined?("@port")
+    end
+    
     should "have port when it is given" do
       port = 80
-      @obj.set_server_type
+      @obj.set_port(port)
+      assert_equal @obj.instance_variable_get("@port"), port
+    end
+    
+    should "return port when none is given" do
+      @obj.set_port()
+      assert_equal @obj.instance_variable_get("@port"), ZapiDefinition::DEFAULT_PORT
     end
   end
 
