@@ -7,8 +7,9 @@ module ZapiDefinition
   MAJORVERS = 1
   MINORVERS = 3
   # User defaults
-  DEF_NA_USER = 'root'
-  DEF_NA_PASSWD = ''
+  DEFAULT_NA_USER = 'root'
+  DEFAULT_NA_PASSWD = ''
+  DEFAULT_PORT = 80
   # Authentication style
   # LOGIN OR HOSTS OR LOGIN_PASSWORD
   AUTH_STYLE = 'LOGIN'
