@@ -1,6 +1,8 @@
 
 # encoding: utf-8
 
+require 'nokogiri'
+
 require_relative 'zapi_definition'
 
 module ZapiMethods
@@ -29,4 +31,12 @@ module ZapiMethods
     @port = port
   end
 
+  def build_xml_content(content)
+    @xml_content = Nokogiri::XML::Builder.new(:encoding => 'utf-8') { |xml|
+      xml.doc.create_internal_subset('html', 'SYSTEM', ZapiDefinition::DEF_DOCTYPE)
+      xml.netapp {
+        
+      }
+    }
+  end
 end
