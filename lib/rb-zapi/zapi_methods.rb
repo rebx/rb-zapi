@@ -26,16 +26,19 @@ module ZapiMethods
   def set_server_type(server_type=SERVER_TYPE)
     @server_type = server_type if TYPE_PORT_HASH.has_key?(server_type)
   end
-  
+
   def set_port(port=TYPE_PORT_HASH[@server_type || SERVER_TYPE])
     @port = port
   end
 
-  def build_xml_content(content)
+  def build_xml_content(content=nil)
     @xml_content = Nokogiri::XML::Builder.new(:encoding => 'utf-8') { |xml|
       xml.doc.create_internal_subset('html', 'SYSTEM', ZapiDefinition::DEF_DOCTYPE)
-      xml.netapp {
-        
+      #xml.doc.create_internal_subset('html', 'SYSTEM', ZapiDefinition::DEF_DOCTYPE)
+      #xml.netapp.('xmlns' => ZapiDefinition::NA_NAMESPACE_URI).version(ZapiDefinition::MAJOR_VERSION + "." + ZapiDefinition::MINOR_VERSION) {
+      xml.netapp('xmlns' => ZapiDefinition::NA_NAMESPACE_URI) {
+        xml.netapp.version("#{ZapiDefinition::MAJOR_VERSION}.#{ZapiDefinition::MINOR_VERSION}")
+
       }
     }
   end

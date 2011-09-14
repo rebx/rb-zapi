@@ -4,8 +4,8 @@
 module ZapiDefinition
 
   # ZAPI version standards
-  MAJORVERS = 1
-  MINORVERS = 3
+  MAJOR_VERSION = 1
+  MINOR_VERSION = 3
   # User defaults
   DEFAULT_NA_USER = 'root'
   DEFAULT_NA_PASSWD = ''
@@ -34,7 +34,7 @@ module ZapiDefinition
     'Agent'     =>    4092,
     'DFM'       =>    8081
   }
-  
+
   XML_HEADER = ""
 
 end
